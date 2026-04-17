@@ -1,5 +1,4 @@
-﻿import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
+﻿import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import { Gamepad2, Cookie, ArrowLeft, Lock } from 'lucide-react';
 import CoinCountingApp from './games/CoinCounting/CoinCountingApp';
 import CookieSharingApp from './games/CookieSharing/CookieSharingApp';
