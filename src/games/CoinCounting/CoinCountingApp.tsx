@@ -5,7 +5,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { RotateCcw, Volume2, VolumeX, Sparkles } from 'lucide-react';
+import { RotateCcw, Volume2, VolumeX } from 'lucide-react';
 
 // --- Audio Helper ---
 let audioCtx: AudioContext | null = null;
@@ -102,7 +102,7 @@ const Jar = ({ target, current, color, isComplete }: JarProps) => {
 
 export default function App() {
   const [jarCounts, setJarCounts] = useState<number[]>([0, 0, 0, 0, 0]);
-  const [coins, setCoins] = useState<{ id: number; x: number; y: number }[]>([]);
+  const [coins, setCoins] = useState<{ id: number; left: number; top: number }[]>([]);
   const [isMuted, setIsMuted] = useState(false);
   const [showWin, setShowWin] = useState(false);
   const jarRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -225,7 +225,7 @@ export default function App() {
       {/* Jars Area */}
       <div className="w-full max-w-7xl flex gap-1 md:gap-8 items-end justify-center mb-6 md:mb-12">
         {targets.map((target, i) => (
-          <div key={i} ref={el => jarRefs.current[i] = el} className="flex-1 max-w-[120px] md:max-w-[200px]">
+          <div key={i} ref={el => { jarRefs.current[i] = el; }} className="flex-1 max-w-[120px] md:max-w-[200px]">
             <Jar 
               id={i}
               target={target}
