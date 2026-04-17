@@ -79,7 +79,7 @@ function Home() {
     <div className="min-h-screen bg-[#F8FAFC] pb-16 flex flex-col items-center relative overflow-hidden font-sans">
       <div className="w-full bg-white shadow-sm flex flex-col md:flex-row items-center justify-center p-4 md:p-6 relative mb-8 gap-2 md:gap-0">
          <img src={takadamLogo} alt="Takadam Logo" className="h-12 md:absolute md:left-6 md:h-16 object-contain" />
-         <h1 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] bg-clip-text text-transparent text-center drop-shadow-sm py-2 md:py-4">
+         <h1 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-[#80D6B6] via-[#47BB7B] to-[#2DA060] bg-clip-text text-transparent text-center drop-shadow-sm py-2 md:py-4">
            Takadam Games
          </h1>
       </div>
