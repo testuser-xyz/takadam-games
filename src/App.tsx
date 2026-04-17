@@ -2,6 +2,7 @@
 import { Gamepad2, Cookie, ArrowLeft, Lock } from 'lucide-react';
 import CoinCountingApp from './games/CoinCounting/CoinCountingApp';
 import CookieSharingApp from './games/CookieSharing/CookieSharingApp';
+import MyPrideDrawingApp from './games/MyPrideDrawing/MyPrideDrawingApp';
 import takadamLogo from './assets/takadam-logo.png';
 
 function BackButton() {
@@ -69,6 +70,23 @@ function Home() {
             Unlock & Play
           </div>
         </div>
+
+        <div 
+          onClick={() => handleGameClick('/my-pride-drawing')}
+          className="group relative bg-purple-500/10 rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:bg-purple-500/20 transition-all duration-300 transform hover:-translate-y-2 border-4 border-purple-500/40 cursor-pointer md:col-span-2"
+        >
+          <div className="absolute top-4 right-4 bg-purple-500/20 p-3 rounded-full flex gap-2">
+            <Lock className="w-8 h-8 text-purple-600" />
+            <Gamepad2 className="w-8 h-8 text-purple-600" />
+          </div>
+          <h2 className="text-2xl font-bold text-[#1E293B] mb-4">My Pride Drawing</h2>
+          <p className="text-gray-600 mb-6 text-lg">
+            What toy makes you feel super happy? Draw it and write your name!
+          </p>
+          <div className="inline-block bg-gradient-to-r from-[#47BB7B] to-[#E4B347] text-white font-bold py-2 px-6 rounded-full opacity-90 group-hover:opacity-100 transition-opacity">
+            Unlock & Play
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -81,6 +99,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/coin-counting" element={<><BackButton/><CoinCountingApp /></>} />
         <Route path="/cookie-sharing" element={<><BackButton/><CookieSharingApp /></>} />
+        <Route path="/my-pride-drawing" element={<><BackButton/><MyPrideDrawingApp /></>} />
       </Routes>
     </Router>
   );
