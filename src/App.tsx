@@ -1,5 +1,6 @@
-﻿import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
-import { Gamepad2, Cookie, ArrowLeft } from 'lucide-react';
+﻿import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { Gamepad2, Cookie, ArrowLeft, Lock } from 'lucide-react';
 import CoinCountingApp from './games/CoinCounting/CoinCountingApp';
 import CookieSharingApp from './games/CookieSharing/CookieSharingApp';
 
@@ -16,6 +17,17 @@ function BackButton() {
 }
 
 function Home() {
+  const navigate = useNavigate();
+
+  const handleGameClick = (path: string) => {
+    const code = prompt("This game is locked. Please enter the access code:");
+    if (code === "1234") { // You can change the access code here
+      navigate(path);
+    } else if (code !== null) {
+      alert("Incorrect access code!");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#FFFBEB] p-8 flex flex-col items-center">
       <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-12 mt-8 text-center">
@@ -23,11 +35,12 @@ function Home() {
       </h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
-        <Link 
-          to="/coin-counting" 
+        <div 
+          onClick={() => handleGameClick('/coin-counting')}
           className="group relative bg-[#FBBF24]/10 rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:bg-[#FBBF24]/20 transition-all duration-300 transform hover:-translate-y-2 border-4 border-[#FBBF24]/40 cursor-pointer"
         >
-          <div className="absolute top-4 right-4 bg-[#FBBF24]/30 p-3 rounded-full">
+          <div className="absolute top-4 right-4 bg-[#FBBF24]/30 p-3 rounded-full flex gap-2">
+            <Lock className="w-8 h-8 text-[#D97706]" />
             <Gamepad2 className="w-8 h-8 text-[#D97706]" />
           </div>
           <h2 className="text-2xl font-bold text-[#1E293B] mb-4">Coin Counting Adventure</h2>
@@ -35,15 +48,16 @@ function Home() {
             Learn to count coins and match their values! Sort the sparkling coins into the right jars.
           </p>
           <div className="inline-block bg-[#FBBF24] text-white font-bold py-2 px-6 rounded-full group-hover:bg-[#F59E0B] transition-colors">
-            Play Now
+            Unlock & Play
           </div>
-        </Link>
+        </div>
 
-        <Link 
-          to="/cookie-sharing" 
+        <div 
+          onClick={() => handleGameClick('/cookie-sharing')}
           className="group relative bg-pink-100/50 rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:bg-pink-100 transition-all duration-300 transform hover:-translate-y-2 border-4 border-pink-400/40 cursor-pointer"
         >
-          <div className="absolute top-4 right-4 bg-pink-200 p-3 rounded-full">
+          <div className="absolute top-4 right-4 bg-pink-200 p-3 rounded-full flex gap-2">
+            <Lock className="w-8 h-8 text-pink-600" />
             <Cookie className="w-8 h-8 text-pink-600" />
           </div>
           <h2 className="text-2xl font-bold text-[#1E293B] mb-4">Cookie Sharing Fun</h2>
@@ -51,9 +65,9 @@ function Home() {
             Practice division and sharing! Help split the delicious cookies evenly among friends.
           </p>
           <div className="inline-block bg-pink-500 text-white font-bold py-2 px-6 rounded-full group-hover:bg-pink-600 transition-colors">
-            Play Now
+            Unlock & Play
           </div>
-        </Link>
+        </div>
       </div>
     </div>
   );
