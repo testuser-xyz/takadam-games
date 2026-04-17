@@ -29,7 +29,7 @@ function BackButton() {
 
 const CATEGORIES = [
   {
-    name: "Numbers & Logic 🧮",
+    name: "Numbers & Logic",
     games: [
       { id: "/coin-counting", title: "Coin Counting Adventure", desc: "Learn to count coins and match their values! Sort the sparkling coins into the right jars.", color: "from-[#47BB7B] to-[#2DA060]", bgLight: "bg-[#47BB7B]/10", borderOut: "border-[#47BB7B]/40", bgIcon: "bg-[#47BB7B]/20", textMain: "text-[#47BB7B]", icon: Gamepad2 },
       { id: "/cookie-sharing", title: "Cookie Sharing Fun", desc: "Practice division and sharing! Help split the delicious cookies evenly among friends.", color: "from-[#E4B347] to-[#D09A2E]", bgLight: "bg-[#E4B347]/10", borderOut: "border-[#E4B347]/40", bgIcon: "bg-[#E4B347]/20", textMain: "text-[#E4B347]", icon: Cookie },
@@ -54,7 +54,7 @@ const CATEGORIES = [
     ]
   },
   {
-    name: "Creativity & Feelings ✨",
+    name: "Creativity & Feelings",
     games: [
       { id: "/my-pride-drawing", title: "My Pride Drawing", desc: "What toy makes you feel super happy? Draw it on the big canvas and write your name!", color: "from-purple-500 to-purple-700", bgLight: "bg-purple-500/10", borderOut: "border-purple-500/40", bgIcon: "bg-purple-500/20", textMain: "text-purple-600", icon: Gamepad2 },
       { id: "/musical-tap", title: "Musical Tap", desc: "Let's make some music! Tap the magical instruments to hear sweet sound bursts.", color: "from-[#FF595E] to-[#E03A3F]", bgLight: "bg-[#FF595E]/10", borderOut: "border-[#FF595E]/40", bgIcon: "bg-[#FF595E]/20", textMain: "text-[#FF595E]", icon: Music },
